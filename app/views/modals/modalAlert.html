@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button type="button" class="close xButtonClose" data-dismiss="modal" aria-hidden="true" ng-click="modalOptions.close()">
+       <img ng-src="images/icoCloseModalWindow.png"/>
+    </button>
+</div>
+<div class="modal-body-alert" ng-class="'alert-' + (modalOptions.type || 'danger')">
+    <div class="alert-content-img">
+    	<img ng-src="images/icoError.png" ng-if="modalOptions.type == 'danger'">
+    	<img ng-src="images/icoOK.png" ng-if="modalOptions.type == 'success'">
+    	<img ng-src="images/icoInfo.png" ng-if="modalOptions.type == 'info'">
+    </div>
+    <div class="alert-content-txt">
+    	<div>
+	    	<span class="alertNotificationTitle" ng-class="'alert-' + (modalOptions.type || 'danger')">{{modalOptions.title}}</span>
+        </div>
+		<div class="alertNotificationMsg">
+			<span>{{modalOptions.bodyText}}</span>
+		</div>
+    </div>
+</div>
+
+
+
+ 

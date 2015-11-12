@@ -1,0 +1,252 @@
+{
+    "data": {
+        "title": {
+            "nameTitle": "Mario González Duarte",
+            "descriptionTitle": "Curriculum Vitae"
+        },
+        "personalData": {
+            "name": "Mario González Duarte",
+            "address": {
+                "street": "Broadway",
+                "number": "287",
+                "floor": "2",
+                "door": "Front",
+                "city": "Cambridge",
+                "postalCode": "02139",
+                "stateProvince": "MA",
+                "country": "USA"
+            },
+            "nif": "",
+            "passport": "",
+            "phones": [
+                "+1 (857) 930-9154",
+                "+34 679 849 784"
+            ],
+            "email": "magodu.pral@gmail.com",
+            "birthPlace": "Ávila",
+            "birthDate": "September 26th 1982",
+            "status": "Single"
+        },
+        "training": [{
+            "place": "IES Alisal. Santander (Spain)",
+            "degree": "Higher Level Training Cycle (CFGS) in Management Information Systems. Computer and Information Sciences."
+        }],
+        "complementaryTraining": [{
+            "title": "AngularJS",
+            "description": "Internal training. Adesis.",
+            "image": "course-angular-js.png"
+        }, {
+            "title": "Angular directives",
+            "description": "Internal training. Adesis.",
+            "image": "course-angularjs-directives.png"
+        }, {
+            "title": "Clean code",
+            "description": "Internal training. Adesis.",
+            "image": "course-clean-code.png"
+        }, {
+            "title": "NodeJS",
+            "description": "Internal training. Adesis.",
+            "image": "course-node-js.png"
+        }, {
+            "title": "Closures",
+            "description": "Internal training. Adesis.",
+            "image": "course-closures.png"
+        }, {
+            "title": "Memory Leaks",
+            "description": "Internal training. Adesis.",
+            "image": "course-memory-leaks.png"
+        }, {
+            "title": "Functional Programming",
+            "description": "Internal training. Adesis.",
+            "image": "course-functional-programming.png"
+        }, {
+            "title": "Polymer",
+            "description": "Internal training. Adesis.",
+            "image": "course-polymer.png"
+        },{
+            "title": "Superior course of Internet and e-commerce.",
+            "description": "ESINE. 300 hours. Distance learning.",
+            "image": "course-e-commerce.png"
+        }, {
+            "title": "Certified course by Microsoft for developing and implementing web applications with Microsoft Visual Basic .NET .MOC 6463A",
+            "description": "MSL Formación. 60 hours. Madrid (Spain)",
+            "image": "course-dot-net.png"
+        }, {
+            "title": "Web Design practical course",
+            "description": "UNED. 3 credits. Ávila (Spain).",
+            "image": "course-web-design.png"
+        },  {
+            "title": "Photographic adjustment course with Adobe Photoshop",
+            "description": "Formanet, Santander (Spain)",
+            "image": "course-photoshop.png"
+        }, {
+            "title": "Java. Summer Courses",
+            "description": "Cantabria University. Summer Courses",
+            "image": "course-java.png"
+        }],
+        "experience": [{
+            "position": "Javascript Front-End Developer",
+            "company": "Efron Consulting Inc",
+            "imgCompany": "logo_Efron.png",
+            "url": "http://efrongroup.com/",
+            "dateFrom": "01/04/2015",
+            "dateTo": null,
+            "place": "Boston and sorrounding area, United States",
+            "description": [{
+                "text": "Javascript Developer at ISBAN US, in Boston (Massachussets, USA), building internal company software using AngularJS, JQuery, Lo-Dash.js/Underscore.js, TDD, HTML5, Bootstrap and tools like SVN, NodeJS, Jenkins and JIRA."
+            }]
+        }, {
+            "position": "Javascript Front-End Developer",
+            "company": "Adesis Netlife SL",
+            "imgCompany": "logo_Adesis.png",
+            "url": "http://www.adesis.com",
+            "dateFrom": "01/10/2011",
+            "dateTo": "01/04/2015",
+            "place": "Madrid and sorrounding area, Spain",
+            "description": [{
+                "text": "In the last project, Javascript Developer in an important insurance company, Mapfre, working in the establishment of a new and better front-end architecture, including new horizontal components ( with AngularJS directives capsulation) and initial developments (0 Versions)."
+            }, {
+                "text": "Javascript Developer in several important customers (banks and insurance companies, like BBVA Bancomer, Repsol y Bankia) using AngularJS, JQuery, JQueryUI, Lo-Dash.js / Underscore.js, TDD, HTML5 with JADE and tools like GIT, SVN and Node.js."
+            }, {
+                "text": "Previously, Javascript Developer in one of the most importants spanish banks, BBVA, working in Spring Framework using Backbone.js, Underscore.js, JQuery and tools like SVN, JIRA, HUDSON, developing SIP website fully WAI with HTML5, CSS3 with SASS."
+            }]
+        }, {
+            "position": "Front-End Developer",
+            "company": "Atmira Espacio de consultoría",
+            "imgCompany": "logo_Atmira.png",
+            "url": "http://www.atmira.com/",
+            "dateFrom": "01/11/2008",
+            "dateTo": "01/10/2011",
+            "place": "Madrid, Spain",
+            "description": [{
+                "text": "Front-End Developer working with native javascript, DOM, Jquery, HTML, CSS2 and Freemarker. Web applications for several Saving Banks at Confederación Española de Cajas de Ahorros (CECA)."
+            }]
+        }, {
+            "position": "Scolarship holder",
+            "company": "Gobierno de Cantabria",
+            "imgCompany": "logo_Educantabria.png",
+            "url": "http://www.educantabria.es/",
+            "dateFrom": "01/08/2006",
+            "dateTo": "01/10/2008",
+            "place": "Santander, Spain",
+            "description": [{
+                "text": "Webmaster in the government educative site of Cantabria (Spain) http://www.educantabria.es."
+            }]
+        }, {
+            "position": "E-commerce programmer",
+            "company": "Azertia",
+            "imgCompany": "logo_Azertia.png",
+            "url": "http://www.indracompany.com/",
+            "dateFrom": "01/08/2005",
+            "dateTo": "01/01/2006",
+            "place": "Madrid, Spain",
+            "description": [{
+                "text": "Applications to proccess electronic invoicing in Azertia, now absorbed by Indra."
+            }]
+        }],
+        "skills": [{
+                "flair": "AngularJS",
+                "level": 95
+            }, {
+                "flair": "Javascript (native)",
+                "level": 85
+            }, {
+                "flair": "LodashJS",
+                "level": 100
+            }, {
+                "flair": "UnderscoreJS",
+                "level": 100
+            }, {
+                "flair": "JQuery",
+                "level": 90
+            }, {
+                "flair": "BackboneJS",
+                "level": 70
+            }, {
+                "flair": "API REST",
+                "level": 100
+            }, {
+                "flair": "Git",
+                "level": 90
+            }, {
+                "flair": "SVN",
+                "level": 90
+            }, {
+                "flair": "HTML5",
+                "level": 95
+            }, {
+                "flair": "Jade",
+                "level": 100
+            }, {
+                "flair": "CSS",
+                "level": 65
+            }, {
+                "flair": "Responsive design",
+                "level": 80
+            }, {
+                "flair": "DOM",
+                "level": 95
+            }, {
+                "flair": "MV* Architecture",
+                "level": 85
+            }, {
+                "flair": "TDD",
+                "level": 65
+            }, {
+                "flair": "Agile Methodologies",
+                "level": 80
+            }, {
+                "flair": "Sublime Text",
+                "level": 95
+            }, {
+                "flair": "Eclipse",
+                "level": 80
+            }, {
+                "flair": "Photoshop",
+                "level": 90
+            }, {
+                "flair": "Freemarker",
+                "level": 85
+            }, {
+                "flair": "Mac OS X",
+                "level": 99
+            }, {
+                "flair": "Windows",
+                "level": 99
+            }
+        ],
+        "languages": [{
+            "language": "Spanish",
+            "level": 100
+        }, {
+            "language": "English",
+            "level": 80
+        }],
+        "social": [{
+            "name": "linkedIn",
+            "url": "https://www.linkedin.com/pub/mario-gonzález-duarte/55/395/7a6",
+            "image": "circle_linkedin.png",
+            "description": "LinkedIn"
+        }, {
+            "name": "github",
+            "url": "https://github.com/",
+            "image": "circle_github.png",
+            "description": "Github"
+        },{
+            "name": "email",
+            "url": "mailto:magodu.pral@gmail.com?Subject=Mensaje%20desde%20curriculum%20online",
+            "image": "circle_email.png",
+            "description": "email"
+        },{
+            "name": "pdf",
+            "url": "contents/CV_MarioGonzalez_en.pdf",
+            "image": "circle_pdf.png",
+            "description": "Download PDF curriculum"
+        },{
+            "name": "cell_phone",
+            "url": "",
+            "image": "circle_mobile.png",
+            "description": "Click to see number phone"
+        }]
+    }
+}

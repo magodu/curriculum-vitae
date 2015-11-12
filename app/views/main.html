@@ -1,0 +1,241 @@
+<div parallax id="wrapper">
+    <header id="header" class="pagewidth">
+        <hgroup background>
+            <div id="main">
+                <div id="startTitle">
+                    <div id="name"><span class="name">{{cvData.title.nameTitle}}</span></div>
+                    <div id="description" class="description"><span>{{cvData.title.descriptionTitle}}</span></div>
+                </div>
+                <div class="down-link">
+                    <a href="#experience" title="" class="scroll-down-link" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
+                </div>
+            </div>
+        </hgroup>
+        <div id="nav-bar" class="clearfix">
+            <nav>
+                <div id="menu-icon" class="mobile-button">
+                    <span>{{'menu' | translate}}</span>
+                </div>
+                <ul id="main-nav" class="main-nav pagewidth">
+                    <li id="menu-item-main" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-main current_page_item"><a class="main" href="#main">{{'title_main' | translate}}</a></li>
+                    <li id="menu-item-experience" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-experience"><a class="experience" href="#experience">{{'title_experience' | translate}}</a></li>
+                    <li id="menu-item-skills" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-skills"><a class="skills" href="#skills">{{'title_skills' | translate}}</a></li>
+                    <li id="menu-item-training" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-training"><a class="training" href="#training">{{'title_training' | translate}}</a></li>
+                    <li id="menu-item-languages" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-languages"><a class="languages" href="#languages">{{'title_languages' | translate}}</a></li>
+                    <li id="menu-item-contact" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact"><a class="contact" href="#contact">{{'title_contact' | translate}}</a></li>
+                    <li id="menu-item-idiom" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-idiom"><a class="idiom">{{'title_idiom' | translate}}</a>
+                        <ul class="sub-menu">
+                            <li id="menu-idiom-1" class="menu-idiom-1"><a href="" ng-click="changeLanguage('en')">{{'language_english' | translate}}</a></li>
+                            <li id="menu-idiom-2" class="menu-idiom-2"><a href="" ng-click="changeLanguage('es')">{{'language_spanish' | translate}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav id="primary" class="hidden-lanscape-mobile">
+        <ul>
+            <li>
+                <h1>{{'title_main' | translate}}</h1>
+                <a class="main" href="#main">{{'linkDescription' | translate}}</a>
+            </li>
+            <li>
+                <h1>{{'title_experience' | translate}}</h1>
+                <a class="experience" href="#experience">{{'linkDescription' | translate}}</a>
+            </li>
+            <li>
+                <h1>{{'title_skills' | translate}}</h1>
+                <a class="skills" href="#skills">{{'linkDescription' | translate}}</a>
+            </li>
+            <li>
+                <h1>{{'title_training' | translate}}</h1>
+                <a class="training" href="#training">{{'linkDescription' | translate}}</a>
+            </li>
+            <li>
+                <h1>{{'title_languages' | translate}}</h1>
+                <a class="languages" href="#languages">{{'linkDescription' | translate}}</a>
+            </li>
+            <li>
+                <h1>{{'title_contact' | translate}}</h1>
+                <a class="contact" href="#contact">{{'linkDescription' | translate}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <section id="experience">
+            <div class="col-md-12 col-md-12 col-xs-12">
+                <div class="row">
+                    <header class="visible-mobile">
+                        <div id="photograph-mobile" class="col-md-2 col-xs-12 photograph-mobile animated">
+                            <figure class="photograph-image">
+                                <img src="images/cvphoto.jpg" alt="Mario González Duarte">
+                            </figure>
+                        </div>
+                        <div class="col-md-10 col-xs-12">
+                            <h1 class="section-title">{{'title_experience' | translate}}</h1>
+                        </div>
+                    </header>
+                    <header class="hidden-mobile">
+                        <div class="col-md-10 col-xs-8">
+                            <h1 class="section-title">{{'title_experience' | translate}}</h1>
+                        </div>
+                        <div id="photograph" class="col-md-2 col-xs-4 photograph animated">
+                            <figure class="photograph-image">
+                                <img src="images/cvphoto.jpg" alt="Mario González Duarte" />
+                            </figure>
+                        </div>
+                    </header>
+                    <article ng-repeat="experience in cvData.experience">
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                            <div class="experienceSection">
+                                <div class="col-md-12 hidden-mobile">
+                                    <div class="experience-header">
+                                        <div class="title">{{experience.position}}</div>
+                                        <div class="companyLogo">
+                                            <a ng-href="{{experience.url}}" target="_blank" title="Link to {{experience.url}}"><img id="logo{{$index + 1}}" ng-src="images/{{experience.imgCompany}}" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="date">{{experience.dateFrom}} - {{experience.dateTo || ('dates.today' | translate)}} {{calculatePeriod(experience.dateFrom, experience.dateTo)}}&nbsp;&nbsp;&nbsp;|</div>
+                                            <div class="place">{{experience.place}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 visible-mobile">
+                                    <div class="row mobile-logo">
+                                        <div class="companyLogo">
+                                            <a ng-href="{{experience.url}}" target="_blank" title="Link to {{experience.url}}"><img id="logo{{$index + 1}}" ng-src="images/{{experience.imgCompany}}" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 title-mobile">{{experience.position}}</div>
+                                    </div>
+                                    <div class="date">{{experience.dateFrom}} - {{experience.dateTo || ('dates.today' | translate)}}</div>
+                                    <div class="place">{{experience.place}}</div>
+                                </div>
+                                <div class="col-md-12 description">
+                                    <div ng-repeat="description in experience.description">{{description.text}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="col-md-12 col-md-12 col-xs-12">
+                <header>
+                    <h1 class="section-title">{{'title_skills' | translate}}</h1>
+                </header>
+                <div class="skills-section">
+                    <div class="skills-wrapper">
+                        <article ng-repeat="skill in cvData.skills">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-excellent" ng-class="{'progress-bar-excellent': skill.level >= 85, 'progress-bar-very-good': skill.level >= 70 && skill.level < 85, 'progress-bar-good': skill.level >= 60 && skill.level < 70, 'progress-bar-ok': skill.level >= 50 && skill.level < 60, 'progress-bar-bad': skill.level >= 0 && skill.level < 50}" role="progressbar" aria-valuenow="{{skill.level}}" aria-valuemin="0" aria-valuemax="100">
+                                        <i class="progress-bar-label">{{skill.flair}}</i>
+                                        <span class="sr-only">{{skill.level}}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="training">
+            <div class="col-md-12 col-md-12 col-xs-12">
+                <header>
+                    <h1 class="section-title">{{'title_training' | translate}}</h1>
+                </header>
+                <h2 class="courses">{{'education' | translate}}</h2>
+                <article ng-repeat="form in cvData.training">
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                        <div class="training-section">
+                            <div class="col-md-12 hidden-mobile">
+                                <div class="row">
+                                    <div class="training-header title">{{form.degree}}</div>
+                                </div>
+                                <div class="place">{{form.place}}</div>
+                            </div>
+                            <div class="col-xs-12 visible-mobile">
+                                <div class="row">
+                                    <div class="col-xs-12 title-mobile">{{form.degree}}</div>
+                                </div>
+                                <div class="place">{{form.place}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2"></div>
+                </article>
+                <h2 class="courses">{{'courses' | translate}}</h2>
+                <div class="courses">
+                    <ul class="courses">
+                        <li ng-repeat="course in cvData.complementaryTraining">
+                            <img ng-src="images/{{course.image}}">
+                            <h3>{{course.title}}</h3>
+                            <p>{{course.description}}</p>
+                        </li>
+                    </ul>
+                    <br />
+                </div>
+            </div>
+        </section>
+        <section id="languages">
+            <div class="col-md-12 col-md-12 col-xs-12">
+                <header>
+                    <h1 class="section-title">{{'title_languages' | translate}}</h1>
+                </header>
+                <div class="languages-section">
+                    <div class="languages-wrapper">
+                        <article ng-repeat="language in cvData.languages">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-excellent" ng-class="{'progress-bar-excellent': language.level >= 85, 'progress-bar-very-good': language.level >= 70 && language.level < 85, 'progress-bar-good': language.level >= 60 && language.level < 70, 'progress-bar-ok': language.level >= 50 && language.level < 60, 'progress-bar-bad': language.level >= 0 && language.level < 50}" role="progressbar" aria-valuenow="{{language.level}}" aria-valuemin="0" aria-valuemax="100">
+                                        <i class="progress-bar-label">{{language.language}}</i>
+                                        <span class="sr-only">{{language.level}}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact-section">
+                <header>
+                    <h1 class="section-title-white">{{'title_contact' | translate}}</h1>
+                </header>
+                <div class="container-contact">
+                    <div class="contact-text"><span>{{'contactTextWarning' | translate}} </span>{{'contactTextExplanation' | translate}}</div>
+                    <div class="map-wrapper">
+                        <div google-maps id="googleMaps" map-options="mapOptions" markers="cities"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12 container-contact2">
+                    <div class="social-widgets">
+                        <ul class="social-links horizontal">
+                            <li class="social-link-item" ng-repeat="item in cvData.social">
+                                <a ng-href="{{item.url}}" title="{{item.description}}" target="_blank" ng-class="{'phone-link': item.name == 'cell_phone'}">
+                                    <img id="{{item.name}}" ng-src="images/{{item.image}}" width="50" height="50" alt="{{item.description}}" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div animated-phone-div></div>
+                </div>
+                <div id="footerwrap">
+                    <footer id="footer" class="pagewidth">
+                        <p class="back-top"><a class="main" href="#header">{{'buttonToTop' | translate}}</a></p>
+                        <div class="footer-text clearfix">
+                            <div>{{cvData.personalData.name}} • {{currentYear}}</div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
