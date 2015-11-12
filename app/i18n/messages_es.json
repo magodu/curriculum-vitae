@@ -1,0 +1,29 @@
+{
+    "language_english": "Inglés",
+    "language_spanish": "Español",
+    "buttonToTop": "Inicio",
+    "menu": "Menú",
+    "title_main": "Inicio",
+    "title_experience": "Experiencia",
+    "title_skills": "Conocimientos",
+    "title_training": "Formación",
+    "title_languages": "Idiomas",
+    "title_contact": "Contacto",
+    "title_idiom": "Idioma",
+    "linkDescription": "Ver",
+    "education": "Educación",
+    "courses": "Cursos",
+    "maps": {
+        "boston": "Actualmente trabajando y viviendo aquí.",
+        "madrid": "última ciudad donde he vivido."
+    },
+    "dates": {
+        "today": "Fecha actual",
+        "month": " mes",
+        "months": " meses",
+        "year": " año",
+        "years": " años"
+    },
+    "contactTextWarning": "Nota:",
+    "contactTextExplanation": "Debido a que mi nacionalidad es española, para poder optar a posiciones en Estados Unidos es necesario que la empresa interesada proporcione una VIsa internacional de trabajo"
+}
