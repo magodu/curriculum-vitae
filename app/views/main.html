@@ -219,7 +219,7 @@
                     <div class="social-widgets">
                         <ul class="social-links horizontal">
                             <li class="social-link-item" ng-repeat="item in cvData.social">
-                                <a ng-href="{{item.url}}" title="{{item.description}}" target="_blank" ng-class="{'phone-link': item.name == 'cell_phone'}">
+                                <a ng-href="{{item.url}}" title="{{item.description}}" target="{{item.name == 'email' ? '_self' : '_blank'}}" ng-class="{'phone-link': item.name == 'cell_phone'}">
                                     <img id="{{item.name}}" ng-src="images/{{item.image}}" width="50" height="50" alt="{{item.description}}" />
                                 </a>
                             </li>
