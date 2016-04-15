@@ -2,6 +2,7 @@
   "name": "yeoman",
   "private": true,
   "devDependencies": {
+    "core-util-is": "^1.0.2",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
@@ -24,10 +25,12 @@
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
+    "inherits": "^2.0.1",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "readable-stream": "^2.0.6",
     "time-grunt": "^1.0.0"
   },
   "engines": {
