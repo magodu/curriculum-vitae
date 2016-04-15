@@ -57,8 +57,9 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
             dif = fDate2 - fDate1,
             days = Math.floor(dif / (1000 * 60 * 60 * 24)),
             months = 0,
-            years = 0;
-
+            years = 0,
+            txtYear = '',
+            txtMonth = '';
 
         months = Math.ceil(days / 30);
         period = months > 1 ? '(' + months + $filter('translate')('dates.months') + ')' : '(' + months + $filter('translate')('dates.month') + ')';
@@ -69,7 +70,9 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
             if (months % 12 === 0) {
                 period = years > 1 ? '(' + years + $filter('translate')('dates.years') + ')' : '(' + years + $filter('translate')('dates.year') + ')';
             } else {
-                period = '(' + years + $filter('translate')('dates.years') + ', ' + (months % 12) + $filter('translate')('dates.months') + ')';
+                txtYear = years !== 1 ? $filter('translate')('dates.years') : $filter('translate')('dates.year');
+                txtMonth = months % 12 !== 1 ? $filter('translate')('dates.months') : $filter('translate')('dates.month');
+                period = '(' + years + txtYear + ', ' + (months % 12) + txtMonth + ')';
             }
         }
 
