@@ -54,7 +54,6 @@ var translations_EN = {
         years: ' years'
     },
     contactTextWarning: 'Notice:',
-    contactTextExplanation: 'For being available to US position, is necessary to be sponsored in an international Visa, due to I\'m Spanish.',
     loading: 'Loading',
     loadingError: 'Error loading data has occurred. Try to reload the site.'
 };
@@ -87,7 +86,6 @@ var translations_ES = {
         years: ' años'
     },
     contactTextWarning: 'Nota:',
-    contactTextExplanation: 'Debido a que mi nacionalidad es española, para poder optar a posiciones en Estados Unidos es necesario que la empresa interesada proporcione una VIsa internacional de trabajo',
     loading: 'Cargando',
     loadingError: 'Ha ocurrido un error al cargar los datos. Intente recargar la página.'
 };
