@@ -54,7 +54,7 @@ var translations_EN = {
         years: ' years'
     },
     contactTextWarning: 'Notice:',
-    contactTextExplanation: 'For being available to US position, is necessary to be sponsored in a international Visa, due to I\'m Spanish.',
+    contactTextExplanation: 'For being available to US position, is necessary to be sponsored in an international Visa, due to I\'m Spanish.',
     loading: 'Loading',
     loadingError: 'Error loading data has occurred. Try to reload the site.'
 };

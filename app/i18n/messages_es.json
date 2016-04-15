@@ -25,5 +25,7 @@
         "years": " años"
     },
     "contactTextWarning": "Nota:",
-    "contactTextExplanation": "Debido a que mi nacionalidad es española, para poder optar a posiciones en Estados Unidos es necesario que la empresa interesada proporcione una VIsa internacional de trabajo"
+    "contactTextExplanation": "Debido a que mi nacionalidad es española, para poder optar a posiciones en Estados Unidos es necesario que la empresa interesada proporcione una VIsa internacional de trabajo",
+    "loading": "Cargando",
+    "loadingError": "Ha ocurrido un error al cargar los datos. Intente recargar la página."
 }
