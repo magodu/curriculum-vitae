@@ -291,11 +291,11 @@ directives.directive('background', function ($q) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            var urlDropboxResources = 'https://dl.dropboxusercontent.com/u/2251063/appData/images/',
+            var urlBase = '../../images/',
                 images = ['background1.jpg', 'background2.png', 'background4.jpg'],
                 num = Math.floor(Math.random() * images.length),
                 randomImage = images[num],
-                backgroundImage = urlDropboxResources + randomImage;
+                backgroundImage = urlBase + randomImage;
             
             scope.preload = function(url) {
                 var deffered = $q.defer(),
