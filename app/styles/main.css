@@ -831,7 +831,6 @@ MAIN NAVIGATION
     top: 165px;
     left: 5%;
     z-index: 9999;
-    behavior: url(/cdg/apps-general/css/PIE/PIE.htc);
 }
 
 .modal-footer {
