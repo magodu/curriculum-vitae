@@ -47,7 +47,7 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 var $photograph = $('#photograph'),
                     $document = $(document),
                     startPhotograph = $('#experience').offset().top / 5,
-                    endPhotograph = $('#skills').offset().top - ($('#experience').offset().top / 3);
+                    endPhotograph = $('#skills').offset().top - ($('#experience').offset().top / 2);
 
                 if (windowWidth <= MOBILE_WIDTH) {
                     return;
@@ -64,11 +64,11 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 }
 
                 if (($document.scrollTop() >= startPhotograph) && ($document.scrollTop() <= endPhotograph)) {
-                    $photograph.fadeIn();
-                    $photograph.css('visibility', 'visible');
+                    $('#photograph img').addClass('fade-in');
+                    $('#photograph img').removeClass('fade-out');
                 } else {
-                    $photograph.fadeOut();
-                    $photograph.css('visibility', 'hidden');
+                    $('#photograph img').addClass('fade-out');
+                    $('#photograph img').removeClass('fade-in');
                 }
             }
 
