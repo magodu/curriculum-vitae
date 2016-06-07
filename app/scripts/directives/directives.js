@@ -1,4 +1,4 @@
-/* global angular, $, google, directives */
+/* global angular, $, google */
 
 'use strict';
 
@@ -13,7 +13,7 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
 
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
+        link: function(scope) {
             var windowWidth = $(window).width(),
                 MOBILE_WIDTH = 760,
                 FixedHeader;
@@ -81,6 +81,41 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 $('#parallax-bg3').css('top', (0 - (scrolled * 0.75)) + 'px');*/
             }
 
+            /* Set navigation dots to an active state as the user scrolls */
+            function redrawDotNav() {
+                var section1Top = 0;
+                // The top of each section is offset by half the distance to the previous section.
+                var section2Top = $('#experience').offset().top;
+                var section3Top = $('#skills').offset().top;
+                var section4Top = $('#training').offset().top;
+                var section5Top = $('#languages').offset().top;
+                var section6Top = $('#contact').offset().top;
+
+                $('nav#primary a').removeClass('active');
+                $('#main-nav li').removeClass('current_page_item');
+
+                if ($(document).scrollTop() >= section1Top && $(document).scrollTop() <= section1Top) {
+                    $('nav#primary a.main').addClass('active');
+                    $('#main-nav li.menu-item-main').addClass('current_page_item');
+                } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top) {
+                    $('nav#primary a.experience').addClass('active');
+                    $('#main-nav li.menu-item-experience').addClass('current_page_item');
+                } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top) {
+                    $('nav#primary a.skills').addClass('active');
+                    $('#main-nav li.menu-item-skills').addClass('current_page_item');
+                } else if ($(document).scrollTop() >= section4Top && $(document).scrollTop() < section5Top) {
+                    $('nav#primary a.training').addClass('active');
+                    $('#main-nav li.menu-item-training').addClass('current_page_item');
+                } else if ($(document).scrollTop() >= section5Top && $(document).scrollTop() < section6Top) {
+                    $('nav#primary a.languages').addClass('active');
+                    $('#main-nav li.menu-item-languages').addClass('current_page_item');
+                } else if ($(document).scrollTop() >= section6Top) {
+                    $('nav#primary a.contact').addClass('active');
+                    $('#main-nav li.menu-item-contact').addClass('current_page_item');
+                }
+
+            }
+
             function _onScroll() {
                 parallaxScroll();
                 redrawDotNav();
@@ -119,41 +154,6 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                     languagesHandler();
                 }
             };
-
-            /* Set navigation dots to an active state as the user scrolls */
-            function redrawDotNav() {
-                var section1Top = 0;
-                // The top of each section is offset by half the distance to the previous section.
-                var section2Top = $('#experience').offset().top;
-                var section3Top = $('#skills').offset().top;
-                var section4Top = $('#training').offset().top;
-                var section5Top = $('#languages').offset().top;
-                var section6Top = $('#contact').offset().top;
-
-                $('nav#primary a').removeClass('active');
-                $('#main-nav li').removeClass('current_page_item');
-
-                if ($(document).scrollTop() >= section1Top && $(document).scrollTop() <= section1Top) {
-                    $('nav#primary a.main').addClass('active');
-                    $('#main-nav li.menu-item-main').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top) {
-                    $('nav#primary a.experience').addClass('active');
-                    $('#main-nav li.menu-item-experience').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top) {
-                    $('nav#primary a.skills').addClass('active');
-                    $('#main-nav li.menu-item-skills').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section4Top && $(document).scrollTop() < section5Top) {
-                    $('nav#primary a.training').addClass('active');
-                    $('#main-nav li.menu-item-training').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section5Top && $(document).scrollTop() < section6Top) {
-                    $('nav#primary a.languages').addClass('active');
-                    $('#main-nav li.menu-item-languages').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section6Top) {
-                    $('nav#primary a.contact').addClass('active');
-                    $('#main-nav li.menu-item-contact').addClass('current_page_item');
-                }
-
-            }
 
             function hideMenu() {
                 if (windowWidth > MOBILE_WIDTH) {
@@ -290,7 +290,7 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
 directives.directive('background', function ($q) {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
+        link: function(scope, element) {
             var urlBase = '../../images/',
                 images = ['background1.jpg', 'background2.png', 'background4.jpg'],
                 num = Math.floor(Math.random() * images.length),
@@ -451,7 +451,7 @@ directives.directive('animatedPhoneDiv', ['$timeout', function($timeout) {
             '</div>' +
             '</div>' +
             '</div>',
-        link: function(scope, element, attrs) {
+        link: function(scope, element) {
 
             function addContent(model) {
                 var content = '';

@@ -35,7 +35,7 @@ marioApp.service('ModalSrv', ['$modal', '$modalStack', function ($modal, $modalS
                 $scope.modalOptions.ok = function (result) {
                     $modalInstance.close(result);
                 };
-                $scope.modalOptions.close = function (result) {
+                $scope.modalOptions.close = function () {
                     $modalInstance.dismiss('cancel');
                 };
             };
