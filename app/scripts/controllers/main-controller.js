@@ -36,16 +36,7 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
 
     angular.extend($scope, scopeProperties);
 
-    $scope.changeLanguage = function(language) {
-        if ($translate.use() === language) {
-            return;
-        }
-
-        $translate.use(language);
-        getData();
-    };
     
-
     $scope.calculatePeriod = function(dateFrom, dateTo) {
         var period = '',
             currentDate = new Date(),
@@ -91,6 +82,15 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
             MainSrv.hideLoading();
         });
     }
+
+    $scope.changeLanguage = function(language) {
+        if ($translate.use() === language) {
+            return;
+        }
+
+        $translate.use(language);
+        getData();
+    };
 
     function init() {
         getData();

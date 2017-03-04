@@ -169,14 +169,13 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 var sections = ['experience', 'skills', 'training', 'languages', 'contact'],
                     totalHeight = 0,
                     height = 0,
-                    MARGIN_BOTTOM = 100,
                     i = 0,
-                    j = 1;
+                    j;
 
                 $timeout(function() {
 
                     for (j = 1; j <= sections.length; j++) {
-                        height = $('#' + sections[i]).outerHeight() + totalHeight + MARGIN_BOTTOM;
+                        height = $('#' + sections[i]).outerHeight() + totalHeight;
                         $('#' + sections[j]).css('top', height);
                         totalHeight = height;
                         i += 1;
