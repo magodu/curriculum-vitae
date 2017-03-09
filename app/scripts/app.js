@@ -15,7 +15,7 @@
 var marioApp = angular.module('cvparallaxAngularApp', ['directives', 'ui.bootstrap', 'ngRoute', 'ngSanitize', 'ngTouch', 'pascalprecht.translate']);
 
 
-marioApp.config(function($routeProvider) {
+marioApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
@@ -24,6 +24,8 @@ marioApp.config(function($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
+
+    $locationProvider.html5Mode(true);
 });
 
 //TODO: move to i18n and load dinamically
