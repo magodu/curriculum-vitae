@@ -72,24 +72,15 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 }
             }
 
-
-            /* Scroll the background layers */
-            function parallaxScroll() {
-                /*var scrolled = $(window).scrollTop();
-                $('#parallax-bg1').css('top', (0 - (scrolled * 0.25)) + 'px');
-                $('#parallax-bg2').css('top', (0 - (scrolled * 0.5)) + 'px');
-                $('#parallax-bg3').css('top', (0 - (scrolled * 0.75)) + 'px');*/
-            }
-
             /* Set navigation dots to an active state as the user scrolls */
             function redrawDotNav() {
                 var section1Top = 0;
                 // The top of each section is offset by half the distance to the previous section.
-                var section2Top = $('#experience').offset().top;
-                var section3Top = $('#skills').offset().top;
-                var section4Top = $('#training').offset().top;
-                var section5Top = $('#languages').offset().top;
-                var section6Top = $('#contact').offset().top;
+                var section2Top = $('#experience').offset().top - 1;
+                var section3Top = $('#skills').offset().top - 1;
+                var section4Top = $('#training').offset().top - 1;
+                var section5Top = $('#languages').offset().top - 1;
+                var section6Top = $('#contact').offset().top - 1;
 
                 $('nav#primary a').removeClass('active');
                 $('#main-nav li').removeClass('current_page_item');
@@ -117,7 +108,6 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
             }
 
             function _onScroll() {
-                parallaxScroll();
                 redrawDotNav();
             }
 
@@ -199,54 +189,42 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: 0
-                }, 1000, function() {
-                    parallaxScroll(); // Callback is required for iOS
-                });
+                }, 1000);
                 return false;
             });
             $('a.experience').click(function() {
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: $('#experience').offset().top
-                }, 1000, function() {
-                    parallaxScroll();
-                });
+                }, 1000);
                 return false;
             });
             $('a.skills').click(function() {
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: $('#skills').offset().top
-                }, 1000, function() {
-                    parallaxScroll();
-                });
+                }, 1000);
                 return false;
             });
             $('a.training').click(function() {
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: $('#training').offset().top
-                }, 1000, function() {
-                    parallaxScroll();
-                });
+                }, 1000);
                 return false;
             });
             $('a.languages').click(function() {
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: $('#languages').offset().top
-                }, 1000, function() {
-                    parallaxScroll();
-                });
+                }, 1000);
                 return false;
             });
             $('a.contact').click(function() {
                 hideMenu();
                 $('html, body').animate({
                     scrollTop: $('#contact').offset().top
-                }, 1000, function() {
-                    parallaxScroll();
-                });
+                }, 1000);
                 return false;
             });
 
