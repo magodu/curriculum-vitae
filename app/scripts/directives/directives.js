@@ -23,7 +23,7 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
             }
 
             function skillsHandler() {
-                var section3Top = $('#skills').offset().top,
+                var section3Top = $('#skills').offset().top - 1,
                     $article = $('.skills-section').find('article').find('.progress-bar');
 
                 if ($(document).scrollTop() >= section3Top) {
@@ -34,7 +34,7 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
             }
 
             function languagesHandler() {
-                var section6Top = $('#languages').offset().top,
+                var section6Top = $('#languages').offset().top - 1,
                     $article = $('.languages-section').find('article').find('.progress-bar');
                 if ($(document).scrollTop() >= section6Top) {
                     $article.each(function() {
