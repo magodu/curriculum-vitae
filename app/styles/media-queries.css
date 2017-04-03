@@ -156,7 +156,6 @@
         top: auto;
         bottom: 60px;
         max-height: 420px;
-        overflow: auto;
     }
     .no-header #wrapper #main-nav,
     .fixed-header-on #wrapper #main-nav {
