@@ -155,26 +155,6 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 $('body #menu-icon').removeClass('active');
             }
 
-            function setSectionAbsolutePositions() {
-                var sections = ['experience', 'skills', 'training', 'languages', 'contact'],
-                    totalHeight = 0,
-                    height = 0,
-                    i = 0,
-                    j;
-
-                $timeout(function() {
-
-                    for (j = 1; j <= sections.length; j++) {
-                        height = $('#' + sections[i]).outerHeight() + totalHeight;
-                        $('#' + sections[j]).css('top', height);
-                        totalHeight = height;
-                        i += 1;
-                    }
-
-                    $('body').css('height', totalHeight + $('#header').outerHeight());
-
-                }, 0);
-            }
 
             /* Main Menu */
             $('body #menu-icon').click(function(event) {
@@ -242,7 +222,6 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
             $window.addEventListener('scroll', _onScroll);
 
             function init() {
-                setSectionAbsolutePositions();
                 redrawDotNav();
                 FixedHeader.init();
             }

@@ -357,10 +357,7 @@ a.next:hover {
     line-height: 1.7;
 }
 
-#content section {
-    width: 100%;
-    margin-left: 30px;
-}
+
 
 #main,
 #experience,
@@ -380,14 +377,9 @@ a.next:hover {
 }
 
 #experience {
-    position: absolute;
     top: 0px;
 }
 
-#skills {
-    position: absolute;
-    /*top: 1200px;*/
-}
 
 #content h1 {
     margin: 0 0 25px 0;
@@ -414,13 +406,9 @@ a.next:hover {
     font-size: 60px;
 }
 
-#training, #languages{
-    position: absolute;
-}
 
 #contact {
     margin: 0 !important;
-    position: absolute;
 }
 
 #contact .contact-section {
@@ -612,10 +600,10 @@ MAIN NAVIGATION
     bottom: auto;
 }
 
-#main-nav {
+/*#main-nav {
     text-align: center;
     overflow: visible;
-}
+}*/
 
 #main-nav ul {
     bottom: 60px;
@@ -926,6 +914,7 @@ MAIN NAVIGATION
 
 #content section {
     width: 100%;
+    overflow: auto;
 }
 
 #content section .photograph {
@@ -938,7 +927,7 @@ MAIN NAVIGATION
 #content section .photographFixed {
     position: fixed;
     top: 145px;
-    right: -30px;
+    right: 0;
 }
 
 
