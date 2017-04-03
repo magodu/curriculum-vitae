@@ -25,8 +25,9 @@ marioApp.service('MainSrv', ['$q', '$http','$filter', 'HttpSrv', 'ModalSrv', '$t
         ModalSrv.showAlertModal({}, tempModalOptions);
     }
 
+    
 
-    function getData() {
+    var getData = function() {
         var language = $translate.use(),
             serviceUrl = urls.data.replace(/LANGUAGE/, language),
             deferred = $q.defer();
@@ -48,24 +49,24 @@ marioApp.service('MainSrv', ['$q', '$http','$filter', 'HttpSrv', 'ModalSrv', '$t
         HttpSrv.get(serviceUrl).then(success, error);
 
         return deferred.promise;
-    }
+    };
 
-    function showLoading() {
+    var showLoading = function() {
         var modalOptions = {
             bodyText: $filter('translate')('loading')
         };
 
         ModalSrv.showLoadingModal(modalOptions);
-    }
+    };
 
-    function callbackError(message) {
+    var callbackError = function(message) {
         message = message || 'Service Error';
         showAlert({
             type: 'danger',
             title: 'Error',
             bodyText: message
         });
-    }
+    };
 
     return {
         getData: getData,
