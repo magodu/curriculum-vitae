@@ -16,38 +16,47 @@ directives.directive('parallax', ['$window', function($window) {
         link: function(scope) {
             var windowWidth = $(window).width(),
                 MOBILE_WIDTH = 760,
-                FixedHeader;
+                FixedHeader,
+                menuBarHeight = windowWidth <= MOBILE_WIDTH ? $('.clearfix nav').outerHeight() : $('.main-nav').outerHeight();
+
+            var section1Top = 0;
+            // The top of each section is offset by half the distance to the previous section.
+            var section2Top = $('#experience').offset().top - 1;
+            var section3Top = $('#skills').offset().top - 1;
+            var section4Top = $('#training').offset().top - 1;
+            var section5Top = $('#languages').offset().top - 1;
+            var section6Top = $('#contact').offset().top - 1;
 
             function resetValues() {
                 $('article').find('.progress-bar').css('width', '0%');
             }
 
-            function skillsHandler() {
+            function skillsHandler(scrollPosition) {
                 var section3Top = $('#skills').offset().top - 1,
                     $article = $('.skills-section').find('article').find('.progress-bar');
 
-                if ($(document).scrollTop() >= section3Top) {
+                if (scrollPosition >= section3Top) {
                     $article.each(function() {
                         $(this).css('width', $(this).find('span').text());
                     });
                 }
             }
 
-            function languagesHandler() {
+            function languagesHandler(scrollPosition) {
                 var section6Top = $('#languages').offset().top - 1,
                     $article = $('.languages-section').find('article').find('.progress-bar');
-                if ($(document).scrollTop() >= section6Top) {
+                if (scrollPosition >= section6Top) {
                     $article.each(function() {
                         $(this).css('width', $(this).find('span').text());
                     });
                 }
             }
 
-            function photographHandler(scroll) {
+            function photographHandler(scrollPosition, scroll) {
                 var $photograph = $('#photograph'),
                     $document = $(document),
-                    startPhotograph = $('#experience').offset().top / 5,
-                    endPhotograph = $('#skills').offset().top - ($('#experience').offset().top / 2);
+                    startPhotograph = section2Top / 5,
+                    endPhotograph = section3Top - (section2Top / 2);
 
                 if (windowWidth <= MOBILE_WIDTH) {
                     return;
@@ -63,7 +72,7 @@ directives.directive('parallax', ['$window', function($window) {
                     $photograph.addClass('photograph');
                 }
 
-                if (($document.scrollTop() >= startPhotograph) && ($document.scrollTop() <= endPhotograph)) {
+                if ((scrollPosition >= startPhotograph) && (scrollPosition <= endPhotograph)) {
                     $('#photograph img').addClass('fade-in');
                     $('#photograph img').removeClass('fade-out');
                 } else {
@@ -74,33 +83,32 @@ directives.directive('parallax', ['$window', function($window) {
 
             /* Set navigation dots to an active state as the user scrolls */
             function redrawDotNav() {
-                var section1Top = 0;
-                // The top of each section is offset by half the distance to the previous section.
-                var section2Top = $('#experience').offset().top - 1;
-                var section3Top = $('#skills').offset().top - 1;
-                var section4Top = $('#training').offset().top - 1;
-                var section5Top = $('#languages').offset().top - 1;
-                var section6Top = $('#contact').offset().top - 1;
+                var scrollPosition = $(document).scrollTop();
 
                 $('nav#primary a').removeClass('active');
                 $('#main-nav li').removeClass('current_page_item');
 
-                if ($(document).scrollTop() >= section1Top && $(document).scrollTop() <= section1Top) {
+                if (scrollPosition < (section2Top - menuBarHeight)) {
                     $('nav#primary a.main').addClass('active');
                     $('#main-nav li.menu-item-main').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top) {
+
+                } else if (scrollPosition >= section2Top - menuBarHeight && scrollPosition < section3Top) {
                     $('nav#primary a.experience').addClass('active');
                     $('#main-nav li.menu-item-experience').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top) {
+
+                } else if (scrollPosition >= section3Top && scrollPosition < section4Top) {
                     $('nav#primary a.skills').addClass('active');
                     $('#main-nav li.menu-item-skills').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section4Top && $(document).scrollTop() < section5Top) {
+
+                } else if (scrollPosition >= section4Top && scrollPosition < section5Top) {
                     $('nav#primary a.training').addClass('active');
                     $('#main-nav li.menu-item-training').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section5Top && $(document).scrollTop() < section6Top) {
+
+                } else if (scrollPosition >= section5Top && scrollPosition < section6Top) {
                     $('nav#primary a.languages').addClass('active');
                     $('#main-nav li.menu-item-languages').addClass('current_page_item');
-                } else if ($(document).scrollTop() >= section6Top) {
+
+                } else if (scrollPosition >= section6Top) {
                     $('nav#primary a.contact').addClass('active');
                     $('#main-nav li.menu-item-contact').addClass('current_page_item');
                 }
@@ -123,25 +131,26 @@ directives.directive('parallax', ['$window', function($window) {
 
                 },
                 activate: function() {
-                    if ($(window).scrollTop() <= FixedHeader.headerHeight) {
-                        FixedHeader.scrollDisabled();
+                    var scrollPosition = $(document).scrollTop();
+                    if (scrollPosition <= FixedHeader.headerHeight) {
+                        FixedHeader.scrollDisabled(scrollPosition);
                     } else {
-                        FixedHeader.scrollEnabled();
+                        FixedHeader.scrollEnabled(scrollPosition);
                     }
                 },
-                scrollDisabled: function() {
+                scrollDisabled: function(scrollPosition) {
                     $('#nav-bar').removeClass('fixed-nav-bar');
                     $('body').removeClass('fixed-header-on');
-                    photographHandler(false);
+                    photographHandler(scrollPosition, false);
                     resetValues();
 
                 },
-                scrollEnabled: function() {
+                scrollEnabled: function(scrollPosition) {
                     $('#nav-bar').addClass('fixed-nav-bar');
                     $('body').addClass('fixed-header-on');
-                    photographHandler(true);
-                    skillsHandler();
-                    languagesHandler();
+                    photographHandler(scrollPosition, true);
+                    skillsHandler(scrollPosition);
+                    languagesHandler(scrollPosition);
                 }
             };
 
