@@ -1,4 +1,4 @@
-/* global angular, $, google */
+/* global  $, google */
 
 'use strict';
 
@@ -9,7 +9,7 @@ var directives = angular.module('directives', []);
    Example:
    <div parallax id="wrapper">
 */
-directives.directive('parallax', ['$window', '$timeout', function($window, $timeout) {
+directives.directive('parallax', ['$window', function($window) {
 
     return {
         restrict: 'A',
@@ -155,78 +155,81 @@ directives.directive('parallax', ['$window', '$timeout', function($window, $time
                 $('body #menu-icon').removeClass('active');
             }
 
+            function addEvents() {
+                /* Main Menu */
+                $('body #menu-icon').click(function(event) {
+                    event.preventDefault();
+                    $('#main-nav').fadeToggle();
+                    $('#wrapper #top-nav').hide();
+                    $(this).toggleClass('active');
+                });
 
-            /* Main Menu */
-            $('body #menu-icon').click(function(event) {
-                event.preventDefault();
-                $('#main-nav').fadeToggle();
-                $('#wrapper #top-nav').hide();
-                $(this).toggleClass('active');
-            });
+                /* Next/prev and primary nav btn click handlers */
+                $('a.main').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 1000);
+                    return false;
+                });
+                $('a.experience').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: $('#experience').offset().top
+                    }, 1000);
+                    return false;
+                });
+                $('a.skills').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: $('#skills').offset().top
+                    }, 1000);
+                    return false;
+                });
+                $('a.training').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: $('#training').offset().top
+                    }, 1000);
+                    return false;
+                });
+                $('a.languages').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: $('#languages').offset().top
+                    }, 1000);
+                    return false;
+                });
+                $('a.contact').click(function() {
+                    hideMenu();
+                    $('html, body').animate({
+                        scrollTop: $('#contact').offset().top
+                    }, 1000);
+                    return false;
+                });
 
-            /* Next/prev and primary nav btn click handlers */
-            $('a.main').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 1000);
-                return false;
-            });
-            $('a.experience').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: $('#experience').offset().top
-                }, 1000);
-                return false;
-            });
-            $('a.skills').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: $('#skills').offset().top
-                }, 1000);
-                return false;
-            });
-            $('a.training').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: $('#training').offset().top
-                }, 1000);
-                return false;
-            });
-            $('a.languages').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: $('#languages').offset().top
-                }, 1000);
-                return false;
-            });
-            $('a.contact').click(function() {
-                hideMenu();
-                $('html, body').animate({
-                    scrollTop: $('#contact').offset().top
-                }, 1000);
-                return false;
-            });
+                /* Show/hide dot lav labels on hover */
+                $('nav#primary a').hover(
+                    function() {
+                        $(this).prev('h1').show();
+                    },
+                    function() {
+                        $(this).prev('h1').hide();
+                    }
+                );
+                
+                /* Scroll event handler */
+                $window.addEventListener('scroll', _onScroll);
+            }
 
-            /* Show/hide dot lav labels on hover */
-            $('nav#primary a').hover(
-                function() {
-                    $(this).prev('h1').show();
-                },
-                function() {
-                    $(this).prev('h1').hide();
-                }
-            );
-
-            /* Scroll event handler */
-            $window.addEventListener('scroll', _onScroll);
 
             function init() {
+                addEvents();
                 redrawDotNav();
                 FixedHeader.init();
             }
 
-            scope.$watch('cvData', function(value) {
+            scope.$watch('ctrl.cvData', function(value) {
                 if (value) {
                     init();
                 }
@@ -426,7 +429,7 @@ directives.directive('animatedPhoneDiv', ['$timeout', function($timeout) {
                 }, 0);
             }
 
-            scope.$watch('cvData', function(value) {
+            scope.$watch('ctrl.cvData', function(value) {
                 if (value) {
                     addContent(value);
                     addAnimate();

@@ -10,13 +10,14 @@
  * Controller of the cvparallaxAngularApp
  */
 
-marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', function ($scope, MainSrv, $translate, $filter) {
+marioApp.controller('MainCtrl', ['MainSrv', '$translate', '$filter', function (MainSrv, $translate, $filter) {
+
+    var _this = this;
 
     var MOBILE_WIDTH = 760,
         scopeProperties = {
             percentLoaded: 0,
             backgroundImageClass: '',
-            map: '',
             mapOptions: {
                 zoom: 4,
                 mapTypeControl: $(window).width() <= MOBILE_WIDTH ? false : true
@@ -34,10 +35,10 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
             }]
         };
 
-    angular.extend($scope, scopeProperties);
+    angular.extend(_this, scopeProperties);
 
     
-    $scope.calculatePeriod = function(dateFrom, dateTo) {
+    _this.calculatePeriod = function(dateFrom, dateTo) {
         var period = '',
             currentDate = new Date(),
             currentDateFormated = currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear(),
@@ -72,18 +73,18 @@ marioApp.controller('MainCtrl', ['$scope', 'MainSrv', '$translate', '$filter', f
 
     function getCurrentYear() {
         var currentDate = new Date();
-        $scope.currentYear = currentDate.getFullYear();
+        _this.currentYear = currentDate.getFullYear();
     }
 
     function getData() {
         MainSrv.showLoading();
         MainSrv.getData().then(function (response) {
-            $scope.cvData = response;
+            _this.cvData = response;
             MainSrv.hideLoading();
         });
     }
 
-    $scope.changeLanguage = function(language) {
+    _this.changeLanguage = function(language) {
         if ($translate.use() === language) {
             return;
         }

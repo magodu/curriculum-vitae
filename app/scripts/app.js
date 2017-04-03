@@ -19,7 +19,8 @@ marioApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
+            controller: 'MainCtrl',
+            controllerAs: 'ctrl'
         })
         .otherwise({
             redirectTo: '/'

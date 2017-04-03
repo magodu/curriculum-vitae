@@ -3,8 +3,8 @@
         <hgroup background>
             <div id="main">
                 <div id="startTitle">
-                    <div id="name"><span class="name">{{cvData.title.nameTitle}}</span></div>
-                    <div id="description" class="description"><span>{{cvData.title.descriptionTitle}}</span></div>
+                    <div id="name"><span class="name">{{ctrl.cvData.title.nameTitle}}</span></div>
+                    <div id="description" class="description"><span>{{ctrl.cvData.title.descriptionTitle}}</span></div>
                 </div>
                 <div class="down-link">
                     <a href="#experience" title="" class="scroll-down-link" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
@@ -25,8 +25,8 @@
                     <li id="menu-item-contact" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact"><a class="contact" href="#contact">{{'title_contact' | translate}}</a></li>
                     <li id="menu-item-idiom" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-idiom"><a class="idiom">{{'title_idiom' | translate}}</a>
                         <ul class="sub-menu">
-                            <li id="menu-idiom-1" class="menu-idiom-1"><a href="" ng-click="changeLanguage('en')">{{'language_english' | translate}}</a></li>
-                            <li id="menu-idiom-2" class="menu-idiom-2"><a href="" ng-click="changeLanguage('es')">{{'language_spanish' | translate}}</a></li>
+                            <li id="menu-idiom-1" class="menu-idiom-1"><a href="" ng-click="ctrl.changeLanguage('en')">{{'language_english' | translate}}</a></li>
+                            <li id="menu-idiom-2" class="menu-idiom-2"><a href="" ng-click="ctrl.changeLanguage('es')">{{'language_spanish' | translate}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -85,7 +85,7 @@
                             </figure>
                         </div>
                     </header>
-                    <article ng-repeat="experience in cvData.experience">
+                    <article ng-repeat="experience in ctrl.cvData.experience">
                         <div class="col-md-10 col-sm-10 col-xs-12">
                             <div class="experienceSection">
                                 <div class="col-md-12 hidden-mobile">
@@ -129,7 +129,7 @@
                 <h1 class="section-title">{{'title_skills' | translate}}</h1>
                 <div class="skills-section">
                     <div class="skills-wrapper">
-                        <article ng-repeat="skill in cvData.skills">
+                        <article ng-repeat="skill in ctrl.cvData.skills">
                             <div class="col-md-12 col-xs-12">
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-excellent" ng-class="{'progress-bar-excellent': skill.level >= 85, 'progress-bar-very-good': skill.level >= 70 && skill.level < 85, 'progress-bar-good': skill.level >= 60 && skill.level < 70, 'progress-bar-ok': skill.level >= 50 && skill.level < 60, 'progress-bar-bad': skill.level >= 0 && skill.level < 50}" role="progressbar" aria-valuenow="{{skill.level}}" aria-valuemin="0" aria-valuemax="100">
@@ -147,7 +147,7 @@
             <div class="col-md-12 col-xs-12">
                 <h1 class="section-title">{{'title_training' | translate}}</h1>
                 <h2 class="courses">{{'education' | translate}}</h2>
-                <article ng-repeat="form in cvData.training">
+                <article ng-repeat="form in ctrl.cvData.training">
                     <div class="col-md-10 col-sm-10 col-xs-12">
                         <div class="training-section">
                             <div class="col-md-12 hidden-mobile">
@@ -169,7 +169,7 @@
                 <h2 class="courses">{{'courses' | translate}}</h2>
                 <div class="courses">
                     <ul class="courses">
-                        <li ng-repeat="course in cvData.complementaryTraining">
+                        <li ng-repeat="course in ctrl.cvData.complementaryTraining">
                             <img ng-src="images/{{course.image}}">
                             <h3>{{course.title}}</h3>
                             <p>{{course.description}}</p>
@@ -184,7 +184,7 @@
                 <h1 class="section-title">{{'title_languages' | translate}}</h1>
                 <div class="languages-section">
                     <div class="languages-wrapper">
-                        <article ng-repeat="language in cvData.languages">
+                        <article ng-repeat="language in ctrl.cvData.languages">
                             <div class="col-md-12 col-xs-12">
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-excellent" ng-class="{'progress-bar-excellent': language.level >= 85, 'progress-bar-very-good': language.level >= 70 && language.level < 85, 'progress-bar-good': language.level >= 60 && language.level < 70, 'progress-bar-ok': language.level >= 50 && language.level < 60, 'progress-bar-bad': language.level >= 0 && language.level < 50}" role="progressbar" aria-valuenow="{{language.level}}" aria-valuemin="0" aria-valuemax="100">
@@ -202,15 +202,15 @@
             <div class="contact-section">
                 <h1 class="section-title-white">{{'title_contact' | translate}}</h1>
                 <div class="container-contact">
-                    <div class="contact-text"><span>{{'contactTextWarning' | translate}} </span>{{cvData.contact.textExplanation}}</div>
+                    <div class="contact-text"><span>{{'contactTextWarning' | translate}} </span>{{ctrl.cvData.contact.textExplanation}}</div>
                     <div class="map-wrapper">
-                        <div google-maps id="googleMaps" map-options="mapOptions" markers="cities"></div>
+                        <div google-maps id="googleMaps" map-options="ctrl.mapOptions" markers="ctrl.cities"></div>
                     </div>
                 </div>
                 <div class="col-md-12 col-xs-12 container-contact2">
                     <div class="social-widgets">
                         <ul class="social-links horizontal">
-                            <li class="social-link-item" ng-repeat="item in cvData.social">
+                            <li class="social-link-item" ng-repeat="item in ctrl.cvData.social">
                                 <a ng-href="{{item.url}}" title="{{item.description}}" target="{{item.name == 'email' ? '_self' : '_blank'}}" ng-class="{'phone-link': item.name == 'cell_phone'}">
                                     <img id="{{item.name}}" ng-src="images/{{item.image}}" width="50" height="50" alt="{{item.description}}" />
                                 </a>
@@ -223,7 +223,7 @@
                     <footer id="footer" class="pagewidth">
                         <p class="back-top"><a class="main" href="#header">{{'buttonToTop' | translate}}</a></p>
                         <div class="footer-text clearfix">
-                            <div>{{cvData.personalData.name}} • {{currentYear}}</div>
+                            <div>{{ctrl.cvData.personalData.name}} • {{currentYear}}</div>
                         </div>
                     </footer>
                 </div>
