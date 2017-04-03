@@ -5,8 +5,7 @@
 marioApp.service('MainSrv', ['$q', '$http','$filter', 'HttpSrv', 'ModalSrv', '$translate', function($q, $http,  $filter, HttpSrv, ModalSrv, $translate) {
 
     var urls = {
-        data: 'https://cv-data-42f26.firebaseio.com/LANGUAGE.json',
-        data2: 'https://dl.dropboxusercontent.com/u/2251063/appData/CVData/'
+        data: 'https://cv-data-42f26.firebaseio.com/LANGUAGE.json'
     };
 
     function hideLoading() {
