@@ -100,6 +100,17 @@ marioApp.config(function($translateProvider) {
     $translateProvider.translations('en', translations_EN)
     .translations('es', translations_ES);
 
+   /* $translateProvider.useStaticFilesLoader({
+        prefix: '/languages/',
+        suffix: '.json'
+    });
+
+
+    $translateProvider.registerAvailableLanguageKeys(['en', 'es'], {
+        'messages_en': 'en',
+        'messages_es': 'es'
+    });*/
+
     $translateProvider.preferredLanguage('en');
 
     $translateProvider.useSanitizeValueStrategy('escapeParameters');
