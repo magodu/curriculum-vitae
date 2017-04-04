@@ -229,17 +229,16 @@ hr {
 #header,
 #main-nav,
 #body,
-#footerwrap,
 #footer {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 #footerwrap {
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
+    height: 130px;
+    clear: both;
 }
+
 
 header#header {
     height: 100vh;
@@ -368,7 +367,16 @@ a.next:hover {
 }
 
 #contact {
-    padding-top: 0px;
+    background-color: #000;
+    padding-top: 0;
+    margin: 0 ;
+}
+
+
+
+#contact .contact-section {
+    font-weight: 100;
+    font-size: 1.2rem;
 }
 
 #main {
@@ -403,103 +411,17 @@ a.next:hover {
     color: white;
     padding-top: 60px;
     padding-left: 30px;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 
-#contact {
-    margin: 0 !important;
-}
 
-#contact .contact-section {
-    position: relative;
-    background-color: black;
-    height: 1000px;
-    font-weight: 100;
-    margin: 0 0 2em 0;
-    font-size: 1.2rem
+#footer {
+    width: 100%;
+    background-color: #000;
 }
 
 
-/* foreground (ballons/landscape) */
-
-#parallax-bg3 {
-    z-index: 3;
-    position: fixed;
-    left: 50%;
-    /* align left edge with center of viewport */
-    top: 0;
-    width: 940px;
-    margin-left: -470px;
-    /* move left by half element's width */
-}
-
-
-/* balloon */
-
-#bg3-3 {
-    position: absolute;
-    top: 2864px;
-    left: 403px;
-}
-
-#bg3-4 {
-    position: absolute;
-    top: 2700px;
-    left: -85px;
-}
-
-
-/* midground (clouds) */
-
-#parallax-bg2 {
-    z-index: 2;
-    position: fixed;
-    left: 50%;
-    /* align left edge with center of viewport */
-    top: 0;
-    width: 1200px;
-    margin-left: -600px;
-    /* move left by half element's width */
-}
-
-#bg2-4 {
-    position: absolute;
-    top: 2180px;
-    left: 250px;
-}
-
-#bg2-5 {
-    position: absolute;
-    top: 2500px;
-    left: 890px;
-}
-
-
-/* background (clouds) */
-
-#parallax-bg1 {
-    z-index: 1;
-    position: fixed;
-    left: 50%;
-    /* align left edge with center of viewport */
-    top: 0;
-    width: 1200px;
-    margin-left: -600px;
-    /* move left by half element's width */
-}
-
-#bg1-3 {
-    position: absolute;
-    top: 1900px;
-    left: -220px;
-}
-
-#bg1-4 {
-    position: absolute;
-    top: 2020px;
-    left: 450px;
-}
 
 
 /* 
@@ -915,7 +837,8 @@ MAIN NAVIGATION
 
 #content section {
     width: 100%;
-    overflow: auto;
+    padding-left: 30px;
+    overflow: hidden;
 }
 
 #content section .photograph {
@@ -1274,7 +1197,7 @@ br.courses {
 
 .footer-text {
     color: #999;
-    font-size: .75em;
+    font-size: 14px;
     display: block;
     margin: 0 auto;
     padding-top: 10px;
@@ -1312,9 +1235,8 @@ br.courses {
 .container-contact2 {
     height: 12rem;
     width: 35rem;
-    position: absolute;
-    left: calc(50% - 9rem);
-    top: calc(50% - -13rem);
+    left: calc(50% - 10rem);
+    margin-top: 40px;
 }
 
 .map-wrapper {

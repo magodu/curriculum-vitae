@@ -282,8 +282,20 @@
       
     }
 
+    .container-contact2 {
+        top: calc(50% - -10rem);
+    }
+
+
+    #footer {
+        padding-top: 20px;
+    }
+
+    #footerwrap {
+        height: 180px;
+    }
     .phone_container, .front, .back {
-        width: 150px;
+        width: 260px;
         height: 84px;
         border-radius: 10px;
     }
@@ -402,18 +414,15 @@
 
     #map {
         height: 200px;
-        width: 200px;
+        width: 100%;
     }
 
-    .map-wrapper {
+    .container-contact .map-wrapper {
         height: 200px;
-        width: 200px;
+        width: 100%;
     }
-
     .container-contact2 {
-        height: 6rem;
-        width: 20rem;
-        top: calc(50% - -5rem);
+        margin-top: 0;
     }
 
     .phone_container, .front, .back {
