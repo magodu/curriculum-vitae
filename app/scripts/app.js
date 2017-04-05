@@ -26,7 +26,7 @@ marioApp.config(function($routeProvider, $locationProvider) {
             redirectTo: '/'
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 });
 
 //TODO: move to i18n and load dinamically
