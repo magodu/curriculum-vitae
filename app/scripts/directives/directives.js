@@ -168,10 +168,14 @@ directives.directive('parallax', ['$window', function($window) {
             function addEvents() {
                 /* Main Menu */
                 $('body #menu-icon').click(function(event) {
+                    var $link = $(event.target);
                     event.preventDefault();
-                    $('#main-nav').fadeToggle();
-                    $('#wrapper #top-nav').hide();
-                    $(this).toggleClass('active');
+                    if(!$link.data('lockedAt') || + new Date() - $link.data('lockedAt') > 300) {
+                        $('#main-nav').fadeToggle();
+                        $('#wrapper #top-nav').hide();
+                        $(this).toggleClass('active');
+                    }
+                    $link.data('lockedAt', + new Date());
                 });
 
                 /* Next/prev and primary nav btn click handlers */
