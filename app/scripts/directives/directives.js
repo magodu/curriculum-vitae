@@ -55,8 +55,9 @@ directives.directive('parallax', ['$window', function($window) {
             function photographHandler(scrollPosition, scroll) {
                 var $photograph = $('#photograph'),
                     $document = $(document),
-                    startPhotograph = section2Top / 5,
-                    endPhotograph = section3Top - (section2Top / 2);
+                    startPhotograph = $('#experience').offset().top / 5,
+                    endPhotograph = $('#skills').offset().top - ($('#experience').offset().top / 2);
+
 
                 if (windowWidth <= MOBILE_WIDTH) {
                     return;
