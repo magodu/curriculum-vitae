@@ -241,17 +241,18 @@
 	}
 
 	.experienceSection .description {
-	    font-size: 17px;
+	    font-size: 14px;
 	}
+
+    .experience-header .title {
+        font-size: 17px;
+    }
 
     #content section .photograph {
         visibility: visible;
         height: 10em;
     }
 
-    .skills-section, .languages-section, .training-section {
-        width: 90%;
-    }
 
     .photograph-image {
         margin-right: 0em;
@@ -259,8 +260,13 @@
         right: 6em;
     }
 
-    .photograph-image img{
-        width: 100px;
+    .photograph-image img {
+        width: 90px;
+        margin-top: 20px;
+    }
+    .training-section .degree {
+        font-weight: bold;
+        font-size: 15px;
     }
 
     div.courses {
@@ -328,6 +334,7 @@
 
     #content section {
         margin-left: 0px;
+        padding-left: 0px;
     }
 
     div #startTitle {
@@ -348,7 +355,7 @@
     }
 
     .title-mobile {
-        font-size: 17px;
+        font-size: 16px;
         font-weight: bold;
     }
 
@@ -400,12 +407,16 @@
     }
 
     .progress-bar .progress-bar-label {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     #content h2 {
         font-size: 18px;
         border-left: 5px solid #000;
+    }
+
+    #training .training-section {
+        width: 100% 
     }
 
     div.courses {

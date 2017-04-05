@@ -410,7 +410,7 @@ a.next:hover {
     text-align: center;
     color: white;
     padding-top: 60px;
-    padding-left: 30px;
+    padding-left: 15px;
     font-size: 50px;
 }
 
@@ -966,6 +966,7 @@ div #startTitle {
 .experienceSection .description {
     text-align: justify;
     font-size: 20px;
+    margin-top: 20px;
     line-height: normal;
 }
 
@@ -1059,16 +1060,21 @@ div #startTitle {
     border-radius: 15px;
     font-weight: 100;
     background: #F5F5F5;
-    padding: 1em;
-    width: 100%;
-    margin: 0 0 2em 0;
+    width: 85%;
+    margin: 0 0 2em;
+    font-size: 1.2rem;
     float: left;
-    font-size: 1.2rem
+    padding: 1em;
 }
 
 .training-header {
     width: 100%;
     font-weight: bold;
+}
+
+.training-section .degree {
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .training-section .place {

@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 visible-mobile">
+                                <div class="col-md-12 visible-mobile">
                                     <div class="row mobile-logo">
                                         <div class="companyLogo">
                                             <a ng-href="{{experience.url}}" target="_blank" title="Link to {{experience.url}}"><img id="logo{{$index + 1}}" ng-src="images/{{experience.imgCompany}}" /></a>
@@ -145,26 +145,14 @@
         </section>
         <section id="training">
             <div class="col-md-12 col-xs-12">
+
                 <h1 class="section-title">{{'title_training' | translate}}</h1>
                 <h2 class="courses">{{'education' | translate}}</h2>
                 <article ng-repeat="form in ctrl.cvData.training">
-                    <div class="col-md-10 col-sm-10 col-xs-12">
-                        <div class="training-section">
-                            <div class="col-md-12 hidden-mobile">
-                                <div class="row">
-                                    <div class="training-header title">{{form.degree}}</div>
-                                </div>
-                                <div class="place">{{form.place}}</div>
-                            </div>
-                            <div class="col-xs-12 visible-mobile">
-                                <div class="row">
-                                    <div class="col-xs-12 title-mobile">{{form.degree}}</div>
-                                </div>
-                                <div class="place">{{form.place}}</div>
-                            </div>
-                        </div>
+                    <div class="training-section">
+                        <div class="degree">{{form.degree}}</div>
+                        <div class="place">{{form.place}}</div>
                     </div>
-                    <div class="col-md-2 col-sm-2"></div>
                 </article>
                 <h2 class="courses">{{'courses' | translate}}</h2>
                 <div class="courses">
